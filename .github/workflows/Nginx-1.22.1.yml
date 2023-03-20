@@ -16,4 +16,4 @@ jobs:
         run: |
           useradd -m -p test_pass macros
           su macros
-          ll
+          ls /home
