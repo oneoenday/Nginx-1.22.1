@@ -17,4 +17,5 @@ jobs:
           useradd -m -p test_pass macros
           su macros
           find /* -name SPECS
+          cat /etc/redhat-release
           
