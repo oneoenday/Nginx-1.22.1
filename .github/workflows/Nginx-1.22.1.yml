@@ -33,3 +33,9 @@ jobs:
           cd /github/home/rpmbuild/SPECS
           su macros
           rpmbuild -bb nginx.spec
+
+      - name : Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: /github/home/rpmbuild/RPMS/
