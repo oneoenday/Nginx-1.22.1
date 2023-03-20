@@ -31,7 +31,7 @@ jobs:
           ls /home/macros/rpmbuid/*
           pwd
           ls -a /home/macros
-          cat /home/marcros/.rpmmacros
+          cat /home/macros/.rpmmacros
 
       - name: make
         run: |
