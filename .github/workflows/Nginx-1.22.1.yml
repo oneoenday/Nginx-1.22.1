@@ -11,7 +11,6 @@ jobs:
         run: |
           yum install -y rpm-build pcre2-devel gcc gcc-c++ make cmake automake autoconf gd file bison patch mlocate flex diffutils zlib zlib-devel pcre pcre-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libxml2 libxml2-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses ncurses-devel curl curl-devel libcurl libcurl-devel e2fsprogs e2fsprogs-devel krb5 krb5-devel openssl openssl-devel  kernel-devel libtool-libs readline-devel gettext-devel libcap-devel php-mcrypt libmcrypt libmcrypt-devel recode-devel
 
-          
       - name: create user and switch
         run: |
           useradd -m -p test_pass macros
@@ -26,7 +25,6 @@ jobs:
         run: |
           mv /__w/Nginx-1.22.1/Nginx-1.22.1/SPECS /github/home/rpmbuild/
           mv /__w/Nginx-1.22.1/Nginx-1.22.1/SOURCES /github/home/rpmbuild/
-
 
       - name: make
         run: |
