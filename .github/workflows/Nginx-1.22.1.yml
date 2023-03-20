@@ -29,8 +29,11 @@ jobs:
           ls /home/macros/rpmbuid/*
           mv /__w/Nginx-1.22.1/Nginx-1.22.1/SOURCES /home/macros/rpmbuid
           ls /home/macros/rpmbuid/*
+          pwd
+          ls -a /home/macros
 
       - name: make
         run: |
           cd /home/macros/rpmbuid/SPECS
+          pwd
           rpmbuild -bb nginx.spec
