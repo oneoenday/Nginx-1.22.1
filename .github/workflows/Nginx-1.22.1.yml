@@ -1,12 +1,12 @@
-name: GitHub Actions Demo
+name: Nginx-1.22.1
 on:
   workflow_dispatch:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    container: docker.io/centos:7
+    container: docker.io/centos:7s
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: install dependent
         run: |
@@ -16,4 +16,5 @@ jobs:
         run: |
           useradd -m -p test_pass macros
           su macros
-          ls /home
+          find /* -name SPECS
+          
