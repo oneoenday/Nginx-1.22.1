@@ -9,7 +9,7 @@ jobs:
 
       - name: install dependent
         run: |
-          yum install -y rpm-build 
+          yum install -y rpm-build openssl-devel zlib-devel pcre2-devel
           
       - name: create user and switch
         run: |
@@ -20,19 +20,15 @@ jobs:
       - name: create rpmbuid
         run: |
           mkdir -p /github/home/rpmbuild
-          
 
       - name: prep sources
         run: |
           mv /__w/Nginx-1.22.1/Nginx-1.22.1/SPECS /github/home/rpmbuild/
           mv /__w/Nginx-1.22.1/Nginx-1.22.1/SOURCES /github/home/rpmbuild/
-          ls /github/home/rpmbuild/*
-          pwd
 
 
       - name: make
         run: |
           cd /github/home/rpmbuild/SPECS
           su macros
-          pwd
           rpmbuild -bb nginx.spec
