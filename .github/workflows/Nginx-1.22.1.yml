@@ -12,4 +12,8 @@ jobs:
         run: |
           yum install -y rpm-build wget tar gcc automake autoconf libtool make vim net-tools
           
-
+      - name: create user and switch
+        run: |
+          useradd -m -p test_pass macros
+          su macros
+          ll
