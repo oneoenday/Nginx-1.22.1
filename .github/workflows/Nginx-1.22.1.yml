@@ -16,6 +16,17 @@ jobs:
         run: |
           useradd -m -p test_pass macros
           su macros
-          find /* -name SPECS
-          cat /etc/redhat-release
-          
+
+      - name: create rpmbuid
+        run: |
+          mkdir -p /home/macros/rpmbuid
+
+      - name: prep sources
+        run: |
+          mv /__w/Nginx-1.22.1/Nginx-1.22.1/SPECS /home/macros/rpmbuid
+          mv /__w/Nginx-1.22.1/Nginx-1.22.1/SOURCES /home/macros/rpmbuid
+
+      - name: make
+        run: |
+          cd /home/macros/rpmbuid/SPECS
+          rpmbuild -bb nginx.specK
