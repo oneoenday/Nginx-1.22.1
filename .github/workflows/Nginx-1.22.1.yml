@@ -4,7 +4,7 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    container: docker.io/centos:7s
+    container: docker.io/centos:7
     steps:
       - uses: actions/checkout@v3
 
