@@ -31,10 +31,7 @@ jobs:
           ls /home/macros/rpmbuid/*
           pwd
           ls -a /home/macros
-          ls /github/home/rpmbuild/*
-          cp -r /home/macros/rpmbuid/SPECS /github/home/rpmbuild/SPECS
-          cp -r /home/macros/rpmbuid/SOURCES /github/home/rpmbuild/SOURCES
-          ls /github/home/rpmbuild/*
+          cat /home/marcros/.rpmmacros
 
       - name: make
         run: |
