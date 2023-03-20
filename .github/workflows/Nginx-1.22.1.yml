@@ -20,21 +20,20 @@ jobs:
 
       - name: create rpmbuid
         run: |
-          mkdir -p /home/rpmbuid
+          mkdir -p /github/home/rpmbuild
           
 
       - name: prep sources
         run: |
-          mv /__w/Nginx-1.22.1/Nginx-1.22.1/SPECS /home/rpmbuid
-          mv /__w/Nginx-1.22.1/Nginx-1.22.1/SOURCES /home/rpmbuid
-          ls /home/rpmbuid/*
+          mv /__w/Nginx-1.22.1/Nginx-1.22.1/SPECS /github/home/rpmbuild/
+          mv /__w/Nginx-1.22.1/Nginx-1.22.1/SOURCES /github/home/rpmbuild/
+          ls /github/home/rpmbuild/*
           pwd
-          ls -a /home/macros
-          cat /home/macros/.rpmmacros
+
 
       - name: make
         run: |
-          cd /home/rpmbuid/SPECS
+          cd /github/home/rpmbuild/SPECS
           su macros
           pwd
           rpmbuild -bb nginx.spec
