@@ -10,7 +10,7 @@ jobs:
 
       - name: install dependent
         run: |
-          yum install -y rpm-build wget tar gcc automake autoconf libtool make vim net-tools
+          yum install -y rpm-build 
           
       - name: create user and switch
         run: |
@@ -31,6 +31,7 @@ jobs:
           ls /home/macros/rpmbuid/*
           pwd
           ls -a /home/macros
+          ls /github/home/rpmbuild/*
 
       - name: make
         run: |
