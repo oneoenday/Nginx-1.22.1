@@ -35,5 +35,6 @@ jobs:
       - name: make
         run: |
           cd /home/macros/rpmbuid/SPECS
+          su macros
           pwd
           rpmbuild -bb nginx.spec
